@@ -1,3 +1,4 @@
 {
+  "extends": ["airbnb", "plugin:prettier/recommended"],
   "singleQuote": true
 }

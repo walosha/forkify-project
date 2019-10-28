@@ -1,25 +1,25 @@
-var HtmlWebpackPlugin = require("html-webpack-plugin");
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: ['babel-polyfill', './src/index.js'],
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: "babel-loader"
+        loader: 'babel-loader'
       },
       {
         test: /\.html$/i,
-        use: ["html-loader"]
+        use: ['html-loader']
       },
       {
         test: /\.(svg|png|jpe?g|gif)$/i,
         use: {
-          loader: "file-loader",
+          loader: 'file-loader',
           options: {
-            name: "[name].[hash].[ext]",
-            outputPath: "img"
+            name: '[name].[hash].[ext]',
+            outputPath: 'img'
           }
         }
       }
@@ -27,7 +27,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.html"
+      template: './src/index.html'
     })
   ]
 };
